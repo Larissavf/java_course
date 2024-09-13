@@ -13,7 +13,9 @@ public class Point {
      * @return inverse Point
      */
     Point createInversePoint() {
-        return null;
+        this.x = -this.x  ;
+        this.y = -this.y ;
+        return this;
     }
 
     /**
@@ -23,7 +25,21 @@ public class Point {
      * @return euclidean distance
      */
     double euclideanDistanceTo(Point otherPoint) {
-        //YOUR CODE HERE
-        return 0;
+        double euclideanDistance = Math.sqrt(Math.pow(this.x - otherPoint.x, 2) + Math.pow(this.y - otherPoint.y, 2));
+        return euclideanDistance;
+    }
+
+    public static void main(String[] args) {
+    Point p1 = new Point();
+    p1.x = 1;
+    p1.y = 2;
+    p1.createInversePoint();
+
+    Point p2 = new Point();
+    p2.x = 3;
+    p2.y = 4;
+    p1.euclideanDistanceTo(p2);
     }
 }
+
+

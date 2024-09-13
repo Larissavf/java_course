@@ -25,7 +25,7 @@ public class StartingJava {
      */
     public void printHelloUser() {
         String user = System.getProperty("user.name");
-        System.out.print("Hello," + user + "!");
+        System.out.print("Hello, " + user + "!");
     }
 
     /**
@@ -34,11 +34,13 @@ public class StartingJava {
      * @param y the y value
      * @return sum the sum of x and y
      */
+
     public int addInts(int x, int y) {
         /*PUT YOUR CODE HERE
          and replace the zero in the return statement (return 0;)
          with your own value.*/
-        return 0;
+        int sum = x + y;
+        return sum;
     }
 
     /**
@@ -51,7 +53,9 @@ public class StartingJava {
      */
     public double calculateSpeed(double distanceInMeters, double timeInSeconds) {
         //YOUR CODE HERE
-        return 0;
+        double speed_ms = distanceInMeters / timeInSeconds;
+        double speed = speed_ms * 3.6;
+        return Math.round(speed);
     }
 
     /**
@@ -66,7 +70,9 @@ public class StartingJava {
      */
     public long divideAndRound(double x, double y) {
         //YOUR CODE
-        return 0;
+        double divided = x / y;
+
+        return Math.round(divided);
     }
 
     /**
@@ -78,7 +84,8 @@ public class StartingJava {
      */
     public String getGreeting(int index) {
         //YOUR CODE
-        return "";
+        String greeting = GREETINGS[index];
+        return greeting;
     }
 
     //This is a constant - an array of Strings used for the getGreeting() method
@@ -98,9 +105,13 @@ public class StartingJava {
      * @param nameOfDuck the name of the Duck
      * @return duck a Duck instance
      */
+
     public Duck createDuck(int swimSpeed, String nameOfDuck) {
-        //YOUR CODE
-        return null;
+        Duck duck = new Duck();
+        duck.swimSpeed = swimSpeed;
+        duck.name = nameOfDuck;
+
+        return duck;
     }
 
 }

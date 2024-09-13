@@ -26,6 +26,11 @@ public class AllSubstringsPrinter {
      */
     public void printSubstringsLeftAlignedLeftTruncated(String stringToSubstring) {
         //YOUR CODE
+        String printable = stringToSubstring;
+        for (int i = 1; i <= stringToSubstring.length(); i++) {
+            System.out.print(printable);
+            printable = stringToSubstring.substring(i, stringToSubstring.length());
+        }
     }
 
     /**
@@ -36,6 +41,7 @@ public class AllSubstringsPrinter {
      */
     public void printAllSubstrings(String stringToSubstring, boolean leftTruncated, boolean leftAligned) {
         //YOUR CODE
+        if(leftTruncated) {}
     }
 
     /**

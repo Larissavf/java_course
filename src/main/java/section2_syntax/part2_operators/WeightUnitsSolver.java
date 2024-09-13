@@ -17,7 +17,7 @@ public class WeightUnitsSolver {
     public BritishWeightUnits convertFromGrams(int grams) {
         //YOUR CODE HERE
         //change this variable to get a correct testing condition
-        final int gramsTest = Integer.MIN_VALUE;
+        final int gramsTest = 0;
 
         if (grams <= gramsTest) {
             throw new IllegalArgumentException("Error: grams should be above 0. Given: grams=" + grams);
@@ -25,6 +25,15 @@ public class WeightUnitsSolver {
 
         //solve the pounds, ounces and grams, create and return a BritishWeightUnits instance
         //YOUR CODE HERE
-        throw new UnsupportedOperationException("Not implemented yet");
+        //A pound is 454 grams and an ounce is 28 grams
+        if (grams % 454 != grams) {
+
+        }
+
+        int pound = grams / 454;
+        if (pound > 0){ grams =- (grams % 454);}
+        int ounces = grams / 28;
+        if (ounces > 0) {grams =- (grams % 28);}
+        return new BritishWeightUnits(pound, ounces, grams);
     }
 }

@@ -22,7 +22,10 @@ public class LanguageBasics {
      * @return
      */
     public double getDistanceInMeters(double speedInKmPerHour, double elapsedTimeInMinutes) {
-        return 0;
+        double speedInMPerHours = speedInKmPerHour * 3.6;
+        double elapsedTimeInSeconds = elapsedTimeInMinutes * 60;
+        double distanceInMeters = speedInMPerHours * elapsedTimeInSeconds;
+        return distanceInMeters;
     }
 
     /**
@@ -36,11 +39,12 @@ public class LanguageBasics {
     public int getCumulativeSum(int n) {
         //WHAT VALUE DOES i NEED TO HAVE AT THE START?
         //for sure not Integer.MAX_VALUE
-        for (int i = Integer.MAX_VALUE; i < n; i++) {
+        int cumulativeSum = 0;
+        for (int i = n; i < n; i++) {
             //YOUR CODE HERE
-
+            cumulativeSum =+ i;
         }
-        return 0;
+        return cumulativeSum;
     }
 
     /**
@@ -50,9 +54,10 @@ public class LanguageBasics {
      * @param powerUp the power up value
      * @return number^absolute(powerUp)
      */
+
     public double getTheAbsolutePower(int number, int powerUp) {
         //YOUR CODE HERE
-        return 0;
+        return Math.pow(number, powerUp);
     }
 
     /**
@@ -68,7 +73,7 @@ public class LanguageBasics {
         String Name_Of_King = "Franz II";
 
         //return the correct variable
-        return null;
+        return nameOfKing;
     }
 
     public String returnCorrectlyNamedVariable_2() {
@@ -78,7 +83,7 @@ public class LanguageBasics {
         String scoreBoard = "D";
 
         //return the correct variable
-        return null;
+        return scoreBoard;
     }
 
     public String returnCorrectlyNamedVariable_3() {
@@ -88,7 +93,7 @@ public class LanguageBasics {
         String DNA_translator = "D";
 
         //return the correct variable
-        return null;
+        return dnaTranslator;
     }
 
 }

@@ -12,6 +12,10 @@ public class Rectangle {
      */
     int getSurface(){
         //calculate surface - can you implement this?
-        return 0;
+
+        int length = lowerRight.y - upperLeft.y;
+        int width = upperLeft.x - lowerRight.x;
+        int surface = length * width;
+        return surface;
     }
 }

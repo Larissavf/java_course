@@ -24,7 +24,7 @@ class LanguageBasicsTest {
     }
 
     @Test
-    void getDistanceInMeters() {
+    void testgetDistanceInMeters() {
         assertThat(languageBasics.
                 getDistanceInMeters(100, 30)).
                 isEqualTo(50000, offset(1e-6));
