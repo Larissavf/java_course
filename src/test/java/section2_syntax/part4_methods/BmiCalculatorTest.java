@@ -14,7 +14,6 @@ class BmiCalculatorTest {
         double expResult = (weight / (lenght * lenght));
         double result = instance.calculateBMI(weight, lenght);
         assertEquals(expResult, result, DELTA);
-        edite+;
     }
 
     @Test

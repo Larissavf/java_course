@@ -16,16 +16,20 @@ public class ZooApp {
      */
     void processZooData(String[] args) {
         //YOUR CODE HERE; pass zoo animals to ZooSpecies
+
+        for (String arg : args) {
+            ZooSpecies.registerSpeciesFromString(arg);
+        }
     }
 
     /**
      * Prints a summary of the zoo.
      */
     void printZooSummary() {
-        final List<ZooSpecies> allSpecies = null; //YOUR CODE HERE; fetch all species
+        final List<ZooSpecies> allSpecies = ZooSpecies.getAllSpecies(); //YOUR CODE HERE; fetch all species
         //YOUR CODE HERE
         for (ZooSpecies species : allSpecies) {
-            //YOUR CODE HERE
+            System.out.println("Diersoort : " + species);
         }
     }
 }

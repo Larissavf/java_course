@@ -64,7 +64,16 @@ public class BmiCalculator {
      */
     public double getUserWeight() {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.print("Please give your weight, in kg (e.g. 54.6): ");
+        String input = keyboard.nextLine();
+        double weight = 0;
+        try {
+            weight = Double.parseDouble(input);
+        } catch (NumberFormatException ex) {
+            System.out.println("This is no number! aborting...");
+            System.exit(0);
+        }
+        return weight;
     }
     
     /**
@@ -83,7 +92,8 @@ public class BmiCalculator {
         }
         //YOUR CODE HERE (and remove the throw statement)
         //Gewicht in kilogram / (Lengte in meter * Lengte in meter)
-        throw new UnsupportedOperationException("Not implemented yet");
+        double bmi = weight/ (height *height);
+        return bmi;
     }
 
     /**
@@ -100,6 +110,19 @@ public class BmiCalculator {
      */
     public String getMessage(double bmi) {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (bmi <= 0) {
+            throw new IllegalArgumentException("Error: bmi should be above 0.");
+        }
+        if (bmi <= 18.5) {
+            return MESSAGES[0];
+        } else if (bmi <= 25) {
+            return MESSAGES[1];
+        } else if (bmi <= 30) {
+            return MESSAGES[2];
+        } else if (bmi <= 40) {
+            return MESSAGES[3];
+        } else {
+            return MESSAGES[4];
+        }
     }
 }
