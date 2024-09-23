@@ -1,5 +1,6 @@
 package section3_apis.part2_collections;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,17 @@ public class StudentAdmin {
      * @param searchString the substring string to look for
      * @return students
      */
+    private final Map<Integer, Student> students = new HashMap<>();
+    private Map<String, Course> courses = new HashMap<>();
+
+    public void addStudent(Student newStudent) {
+        students.put(newStudent.getStudentId(), newStudent);
+    }
+
+    public void addCourse(String courseId ,Course newCourse) {
+        courses.put(courseId, newCourse);
+    }
+
     public List<Student> getStudents(String searchString) {
         //YOUR CODE HERE (and remove the throw statement)
         throw new UnsupportedOperationException("Not implemented yet");    }

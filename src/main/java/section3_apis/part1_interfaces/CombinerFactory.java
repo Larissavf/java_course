@@ -1,6 +1,7 @@
 package section3_apis.part1_interfaces;
 
-public class CombinerFactory {
+abstract class CombinerFactory implements StringCombiner {
+
     /**
      * This method serves a StringCombiner that will surround the given arguments with double quotes,
      * separated by spaces and the result surrounded by single quotes.
@@ -11,9 +12,16 @@ public class CombinerFactory {
      * @return quotedCombiner
      */
     static StringCombiner getQuotedCombiner() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StringCombiner() {
+            @Override
+           public String combine(String first, String second) {
+                String combinedStrings = '"' + first + '"' + " " + '"' + second + '"';
+                return combinedStrings;
+            }
+
+        };
     }
+
 
     /**
      * This method serves a StringCombiner that will combine the given arguments reversed and original,
@@ -27,8 +35,18 @@ public class CombinerFactory {
      * @return reversedCombiner
      */
     static StringCombiner getReversedCombiner() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StringCombiner() {
+            @Override
+            public String combine(String first, String second) {
+                String newFirst = new StringBuilder(first).reverse().toString();
+                first = first + newFirst;
+                String newSecond = new StringBuilder(second).reverse().toString();
+                second = second + newSecond;
+
+                String combinedStrings = first + " " + second;
+                return combinedStrings;
+            };
+        };
     }
 
     /**
@@ -46,9 +64,29 @@ public class CombinerFactory {
      *
      * @return reversedCombiner
      */
+
+
     static StringCombiner getAsciiSumCombiner() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StringCombiner() {
+            @Override
+            public String combine(String first, String second) {
+                char[] arrayOfFirst = first.toCharArray();
+                char[] arrayOfSecond = second.toCharArray();
+                first = sumOfArray(arrayOfFirst);
+                second = sumOfArray(arrayOfSecond);
+
+                String combinedStrings = first + " " + second;
+                return combinedStrings;
+            };
+            public String sumOfArray(char[] array) {
+                int sum = 0;
+                for (int i = 0; i < array.length; i++) {
+                    sum += (int)array[i];
+                }
+                return Integer.toString(sum);
+            };
+        };
+
     }
 
 }

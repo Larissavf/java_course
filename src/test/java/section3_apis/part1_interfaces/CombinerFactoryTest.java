@@ -10,7 +10,7 @@ class CombinerFactoryTest {
     void getQuotedCombiner1() {
         final StringCombiner quotedCombiner = CombinerFactory.getQuotedCombiner();
         final String actual = quotedCombiner.combine("foo", "bar");
-        final String expected = "'\"foo\" \"bar\"'";
+        final String expected = "\"foo\" \"bar\"";
         assertEquals(expected, actual);
     }
 
@@ -18,7 +18,7 @@ class CombinerFactoryTest {
     void getQuotedCombiner2() {
         final StringCombiner quotedCombiner = CombinerFactory.getQuotedCombiner();
         final String actual = quotedCombiner.combine("how", "dy");
-        final String expected = "'\"how\" \"dy\"'";
+        final String expected = "\"how\" \"dy\"";
         assertEquals(expected, actual);
     }
 

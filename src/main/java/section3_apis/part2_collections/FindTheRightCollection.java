@@ -1,6 +1,8 @@
 package section3_apis.part2_collections;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class FindTheRightCollection {
 
@@ -15,7 +17,7 @@ public class FindTheRightCollection {
      * a collection to store objects to be retrieved by ID.
      */
     Class rightCollection2() {
-        return null;
+        return HashMap.class;
     }
 
     /**
