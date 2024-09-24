@@ -41,7 +41,36 @@ public class AllSubstringsPrinter {
      */
     public void printAllSubstrings(String stringToSubstring, boolean leftTruncated, boolean leftAligned) {
         //YOUR CODE
-        if(leftTruncated) {}
+        // recht letter verdwijnt
+        if(leftTruncated) {
+            if(!leftAligned) {
+                for (int i = 0; i < stringToSubstring.length(); i++) {
+                    StringBuilder sb = new StringBuilder("");
+                    sb.append(createSpacer(i));
+                    sb.append(stringToSubstring.substring(0, stringToSubstring.length()-i));
+                }
+            }
+            for (int i = 0; i < stringToSubstring.length(); i++) {
+                StringBuilder sb = new StringBuilder("");
+                sb.append(stringToSubstring.substring(0, stringToSubstring.length()-i));
+            }
+        }
+        //linker letter verdwijnt
+        else {
+            if(!leftAligned) {
+                for (int i = 0; i < stringToSubstring.length(); i++) {
+                    StringBuilder sb = new StringBuilder("");
+                    sb.append(createSpacer(i));
+                    sb.append(stringToSubstring.substring(i));
+                }
+            }
+            for (int i = 0; i < stringToSubstring.length(); i++) {
+                StringBuilder sb = new StringBuilder("");
+                sb.append(stringToSubstring.substring(i));
+            }
+        }
+
+
     }
 
     /**

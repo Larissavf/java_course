@@ -141,8 +141,11 @@ public class Datatypes {
      * @return the cumulative product
      */
     int cumulativeProduct(int[] input) {
-
-        return 0;
+        int sum = 0;
+        for (int i: input) {
+            sum += i;
+        }
+        return sum;
     }
 
 }
